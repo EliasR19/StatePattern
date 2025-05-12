@@ -19,8 +19,8 @@ import org.mockito.stubbing.Answer;
 
 
 public class PlayTest {
-	PlayState playS = Mockito.mock(PlayState.class);
 	MP3 mp3 = new MP3();
+	PlayState playS = Mockito.spy(PlayState.class);
 	
 	
 	
@@ -28,16 +28,17 @@ public class PlayTest {
 	
 	@BeforeEach
 	public void setUp() {
+		mp3.play(song1);
 	}
 	
 	@Test
 	public void reproducirSeleccion() {
 
-		
-		StopState pS =Mockito.mock(StopState.class);
-		
-		verify(pS).play(song1, mp3);
 		mp3.play(song1);
+		
+		verify(playS).play(song1, mp3);
+
+		
 		
 		
 //		Song song2 = new Song();
