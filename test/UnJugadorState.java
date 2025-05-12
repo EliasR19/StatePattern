@@ -1,22 +1,18 @@
-import static org.mockito.Mockito.doAnswer;
-import static org.mockito.Mockito.doReturn;
 
-import java.util.Arrays;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
-import org.mockito.Mockito;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
+
 
 
 public class UnJugadorState {
 	
 	MaquinaJuegos maquina = new MaquinaJuegos();
-	UnJugador j1 = Mockito.mock(UnJugador.class);
-	
-	UnJugador jA= new UnJugador();
-	UnJugador spy = Mockito.spy(jA);
+
+
 	@BeforeEach
 	public void setUp() {
 	
@@ -24,20 +20,39 @@ public class UnJugadorState {
 	
 	@Test
 	public void UnJugadorTest() {
+		UnJugador j1 = new UnJugador();
 		maquina.precionarBoton();
 		
 		maquina.ingresarFicha();
 		maquina.precionarBoton();
 		
-		Mockito.doNothing().when(spy).precionarBoton(maquina);
-		/*doAnswer(new Answer<Void>() {
-			public Void answer(InvocationOnMock invocation) {
-			      Object[] args = invocation.getArguments();
-			      System.out.println("called with arguments: " + Arrays.toString(args));
-				return null;
-			}
-		}).when(j1).precionarBoton(maquina);
-		*/
+		assertTrue(maquina.iniciarJuego().equals(j1.iniciarJuego()));
 	}
+	
+	@Test
+	public void sinIniciar() {
+		Inicial ini = new Inicial();
+		
+		maquina.ingresarFicha();
+		maquina.precionarBoton();
+		
+		assertTrue(maquina.iniciarJuego().equals(ini.iniciarJuego()));
+	}
+	
+	@Test
+	public void dosFichas(){
+		UnJugador j1 = new UnJugador();
+		maquina.precionarBoton();
+		
+		maquina.ingresarFicha();
+		maquina.ingresarFicha();
+		
+		maquina.precionarBoton();
+		
+		assertFalse(maquina.iniciarJuego().equals(j1.iniciarJuego()));
+	}
+	
+
+	
 	
 }

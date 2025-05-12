@@ -7,11 +7,14 @@ public class Maina {
 		System.out.println("Empezar");
 
 			maquina.precionarBoton();
+			maquina.ingresarFicha();
+			maquina.ingresarFicha();
+			maquina.ingresarFicha();
 			
 			System.out.println(maquina.getCantFichas());
 
 			maquina.precionarBoton();
-			System.out.println(maquina.getState());
+			System.out.println(maquina.iniciarJuego());
 
 		}
 

@@ -10,4 +10,8 @@ public class EsperandoFicha implements IEstadoVJ{
 		}
 	}
 
+	public String iniciarJuego() {
+		return  "Esperando Ficha";
+	}
+
 }

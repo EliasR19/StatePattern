@@ -6,4 +6,8 @@ public class Inicial implements IEstadoVJ{
 			maquina.setEstado(new EsperandoFicha());
 		}
 	}
+
+	public String iniciarJuego() {
+		return "Presione el boton e ingrese Ficha";
+	}
 }

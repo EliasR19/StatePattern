@@ -20,6 +20,10 @@ public class MaquinaJuegos {
 		state.precionarBoton(this);
 	}
 	
+	public String iniciarJuego() {
+		return state.iniciarJuego();
+	}
+	
 	public void terminarJuego() {
 		this.setEstado(new Inicial());
 		cantFichas = 0;
@@ -28,10 +32,7 @@ public class MaquinaJuegos {
 	public int getCantFichas() {
 		return cantFichas;
 	}
-	
-	public IEstadoVJ getState() {
-		return state;
-	}
+
 }
 
 
