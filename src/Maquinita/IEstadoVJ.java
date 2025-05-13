@@ -1,3 +1,4 @@
+package Maquinita;
 
 
 public interface IEstadoVJ {

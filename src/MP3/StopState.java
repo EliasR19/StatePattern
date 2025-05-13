@@ -11,7 +11,7 @@ public class StopState implements IEstadoMP3{
 	@Override
 	public void pause(Song song, MP3 mp3) {
 		System.out.println("ERROR. No hay nada reproduciendoce");
-		//throw new IllegalStateException();
+		throw new IllegalStateException();
 	}
 
 	@Override

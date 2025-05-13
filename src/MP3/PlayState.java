@@ -5,7 +5,7 @@ public class PlayState implements IEstadoMP3{
 	@Override
 	public void play(Song song, MP3 mp3) {
 		System.out.println("ERROR. Ya se esta reproduciendo!");
-		//throw new IllegalStateException();
+		throw new IllegalStateException();
 	}
 
 	@Override

@@ -1,3 +1,4 @@
+package Maquinita;
 
 public class UnJugador implements IEstadoVJ{
 	

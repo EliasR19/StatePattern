@@ -11,8 +11,7 @@ public class PauseState implements IEstadoMP3{
 	@Override
 	public void pause(Song song, MP3 mp3){
 		System.out.println("ERROR. Ya esta en pausa.");
-		
-		//throw new IllegalStateException();
+		throw new IllegalStateException();
 	}
 
 	@Override
@@ -20,5 +19,7 @@ public class PauseState implements IEstadoMP3{
 		mp3.setEstado(new StopState());
 		song.stop();
 	}
+	
+	
 
 }
